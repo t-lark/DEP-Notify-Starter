@@ -243,7 +243,7 @@ def main():
     write_to_dnlog('Command: Image: %s' % DEPSCREEN)
     # please modify this code to match the verbiage you want to display
     write_to_dnlog('Command: MainTitle: Welcome to myOrg')
-    write_to_dnlog('Command: MainText: Please wait while we setup and configure your Mac at Snowflake.  '
+    write_to_dnlog('Command: MainText: Please wait while we setup and configure your Mac at MyOrg  '
                    'This should only take a few minutes and will require a restart of your Mac.  '
                    'If you need assistance please contact IT at helpdesk@myorg.com')
     write_to_dnlog('Status: Preparing your system...')
