@@ -29,7 +29,9 @@ The `MAIN_POLICY_DICT` is a dictionary of all the jamf policies you may ever wan
 ```
 Example Dictionary:
 
-MAIN_POLICY_DICT={"Autoupdate-Firefox": "Firefox", "install_mso365": "Microsoft Office 2019", "install_chrome": "Google Chrome"}
+MAIN_POLICY_DICT={"Autoupdate-Firefox": "Firefox", 
+                 "install_mso365": "Microsoft Office 2019", 
+                 "install_chrome": "Google Chrome"}
 ```
 
 ## Dependencies
