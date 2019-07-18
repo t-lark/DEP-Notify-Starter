@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
-"""This script will orchestrate the main enrollment workflow for DEP and OTA on-boarding and enrollment at Snowflake
-This will be a no touch deployment workflow by default, but also still allow OTA workflows
+"""This script can be used as a template to quickly get DEP notify working across a few different type of enrollment workflows.
+This script does not take advanatage of every feature of DEP Notify and is designed to only be a HUD type display 
+to the end user who is enrolling the device.   
 
 by tlark
 
@@ -36,9 +37,9 @@ SECURITY_LIST = sys.argv[5].split(',')
 # this list for for any dependencies that need to be installed before this script can run, like DEPNotify, or anything
 # custom in your env
 DEPENDENCY_LIST = sys.argv[6].split(',')
-# by default this is commented out in the main() and only ever turned on for trobuleshooting purposes
-# also note if you are jamf cloud I found a ton of false negatives with this method, testing agianst on
-# self hosted/on prem jamf pro seemed to not have the false negative issue
+# by default this is commented out in the main() and exists for trobuleshooting purposes
+# also note if you are jamf cloud I found a ton of false negatives with this method, testing against
+# self hosted/on prem jamf pro seems to not have the false negative issue
 HEALTH_URL = sys.argv[7]
 
 # global vars for the entire code base
@@ -62,10 +63,10 @@ DEP_LOG = '/var/tmp/depnotify.log'
 DEPSCREEN = '/path/to/my/custom_branding.png'
 # master dictionary for vanity names to display in DEP Notify
 # for example your policy might be called install_app02 and you might want it to display "Applicaiton 02"
-# every policy you want to run via this script should be put into this dictionary, below are examples
+# every policy you want to run via this script should be put into this dictionary
 # this way you can have custom vanity names that show up in DEP Notify
 # you will need to fill out this dictionary with every possible policy that DEPNotify may call
-# for example I hvae my zoom room stuff in mine because I have a separate workflow for Zoom Rooms
+# below I have prepopulated examples of how to write the dicitonary 
 MAIN_POLICY_DICT = {"install_firefox": "Firefox", "install_o365": "Microsoft Office 2019", "install_chrome": "Google Chrome"
                    "deploy_settings": "macOS System Settings"}
 
@@ -156,6 +157,7 @@ def run_jamf_policy(run_list):
         elif proc.returncode == 0:
             logging.info('jamf policy %s returned successful..' % policy)
             write_to_dnlog('Status: %s was successfully installed...' % name)
+    # reset the DEP Notify determinate features to reset progress bar
     write_to_dnlog('Command: DeterminateOff:')
     write_to_dnlog('Command: DeterminateOffReset:')
 
