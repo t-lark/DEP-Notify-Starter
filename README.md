@@ -1,4 +1,4 @@
-# DEP-Notify
+# DEP-Notify-Starter
 
 ![Image of DEP Notify HUD](https://raw.githubusercontent.com/t-lark/DEP-Notify/master/images/depnotify1.png)
 
