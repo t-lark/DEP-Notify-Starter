@@ -59,7 +59,7 @@ logging.basicConfig(filename='%s' % LOGFILE, format='%(asctime)s %(message)s',le
 # log for DEP Notify
 DEP_LOG = '/var/tmp/depnotify.log'
 # path to icon for DEP Notify, whatever icon you want in the UI
-# if
+# If you want to use the default refer to the DEP Notify documentation
 DEPSCREEN = '/path/to/my/custom_branding.png'
 # master dictionary for vanity names to display in DEP Notify
 # for example your policy might be called install_app02 and you might want it to display "Applicaiton 02"
