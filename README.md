@@ -17,7 +17,9 @@ In a policy, select this script as the payload and fill out the positional param
 The paramters are split into paramters 4-6, since jamf has a character limit of 255 characters per a parameter in the database.  This was a design decision just in case anyone ever had the neeed to use more than 255 characters total, you can split the polciies between those 3 parameters.   Logically the script will run all dependencies first, all software second, and all security payloads last (since security payloads sometimes reqire reboots).  
 
 ```
-NOTE: Python will split() these items by comma, so you only need to input the custom policy event trigger name and seprate each one by comma.  The code will then split this into a list to iterate thorugh them and execute them
+NOTE: Python will split() these items by comma, so you only need to input the custom policy 
+event trigger name and seprate each one by comma.  The code will then split this into a list 
+to iterate thorugh them and execute them
 ```
 
 The health check URL, I put in here so you can test to see if remote clients or remote offices may have issues reaching out to your Jamf Pro server.  Due take notice that I had issues with Jamf Cloud and built this in for that reason, but I have also seen false negatives where the test fails, but my jamf cloud isntance is acutally up and running just fine.   So, this needs to be tested and by default is commented out of the code.  Results may vary form environment to environment.
