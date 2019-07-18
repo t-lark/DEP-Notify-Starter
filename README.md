@@ -47,7 +47,7 @@ You will need to deploy your custom logos and branding, and then specifcy where 
 
 ## Reusable Code
 
-This script is used in two workflows at my current job.   One if is for end users and one is for Zoom Rooms.  This is why I chose to build the code more as a template than anything else.  This way when one of our IT employees sets up a new Zoom Room they will get a different workflow using the same DEP Notify code, versus a standard employee running the normal DEP Notify workflow.   So, hopefully this may help in those situations where you also need to split out workflows for various reasons.
+This script is used in two workflows at my current job.   One is for end users and one is for Zoom Rooms.  This is why I chose to build the code more as a template than anything else.  This way when one of our IT employees sets up a new Zoom Room they will get a different workflow using the same DEP Notify code, versus a standard employee running the normal DEP Notify workflow.   So, hopefully this may help in those situations where you also need to split out workflows for various reasons.
 
 
 ## Issues and Features
