@@ -160,7 +160,7 @@ def run_jamf_policy(run_list):
     write_to_dnlog('Command: DeterminateOffReset:')
 
 
-def set_compuptername():
+def set_computername():
     """set the computer name to the serial number of the Mac"""
     # set command to get the serial
     cmd = ['system_profiler', 'SPHardwareDataType', '-xml']
@@ -233,7 +233,7 @@ def main():
     #check_jss_connection()
     # set the computer name
     logging.info('setting the computer name...')
-    set_compuptername()
+    set_computername()
     # ensure dependencies and jamf binary is present
     logging.info('Installing initial dependencies for DEP Notify flow...')
     install_dependencies()
