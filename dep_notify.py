@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """This script can be used as a template to quickly get DEP notify working across a few different type of enrollment workflows.
-This script does not take advanatage of every feature of DEP Notify and is designed to only be a HUD type display 
+This script does not take advantage of every feature of DEP Notify and is designed to only be a HUD type display 
 to the end user who is enrolling the device.   
 
 by tlark
@@ -26,8 +26,8 @@ from Cocoa import NSRunningApplication
 
 # positional parameters passed from jamf, always start with $4 as $1-$3 are reserved by jamf
 #
-# NOTE - I split up policy feeds into 3 parameters, this is mainly designed on purprose to get around 
-# character limits in jamf of psoitional parameters, which each parameter has a limit of 255 characters
+# NOTE - I split up policy feeds into 3 parameters, this is mainly designed on purpose to get around 
+# character limits in jamf of positional parameters, which each parameter has a limit of 255 characters
 #
 # this will be the list of policy triggers we need to run at Enrollment
 # list of manual trigger policies in a positional parameter of standard software you want to install
@@ -37,7 +37,7 @@ SECURITY_LIST = sys.argv[5].split(',')
 # this list for for any dependencies that need to be installed before this script can run, like DEPNotify, or anything
 # custom in your env
 DEPENDENCY_LIST = sys.argv[6].split(',')
-# by default this is commented out in the main() and exists for trobuleshooting purposes
+# by default this is commented out in the main() and exists for troubleshooting purposes
 # also note if you are jamf cloud I found a ton of false negatives with this method, testing against
 # self hosted/on prem jamf pro seems to not have the false negative issue
 HEALTH_URL = sys.argv[7]
@@ -62,7 +62,7 @@ DEP_LOG = '/var/tmp/depnotify.log'
 # If you want to use the default refer to the DEP Notify documentation
 DEPSCREEN = '/path/to/my/custom_branding.png'
 # master dictionary for vanity names to display in DEP Notify
-# for example your policy might be called install_app02 and you might want it to display "Applicaiton 02"
+# for example your policy might be called install_app02 and you might want it to display "Application 02"
 # every policy you want to run via this script should be put into this dictionary
 # this way you can have custom vanity names that show up in DEP Notify
 # you will need to fill out this dictionary with every possible policy that DEPNotify may call
