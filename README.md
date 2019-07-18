@@ -8,7 +8,7 @@ This script is meant to be a very quick way to use [DEP Notify](https://gitlab.c
 
 ## Usage
 
-To use this script, copy or clone it into your Jamf Pro envrionment, and modify the global variables and verbiage to meet your specific needs.  Since DEP Notify does read values from a log stream, you will need to go over the code and ensure to put in the exact text you wish DEP Notify to dispaly to your end users.   
+To use this script, copy or clone the repo, and then upload it into your Jamf Pro envrionment.  You'll need to modify the global variables and verbiage to meet your specific needs.  Since DEP Notify does read values from a log stream, you will need to go over the code and ensure to put in the exact text you wish DEP Notify to dispaly to your end users.   
 
 In a policy, select this script as the payload and fill out the positional parameters like the example picture below:
 
