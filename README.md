@@ -14,7 +14,7 @@ In a policy, select this script as the payload and fill out the positional param
 
 ![jamf parameter config](https://raw.githubusercontent.com/t-lark/DEP-Notify/master/images/dep_paramters.png)
 
-The policy list paramters are split between paramters 4-6, since jamf has a character limit of 255 characters per a parameter in the database.  This was a design decision just in case anyone ever had the neeed to use more than 255 characters total, you can split the polciies between those 3 parameters.   Logically the script will run all dependencies first, all software second, and all security payloads last (since security payloads sometimes require reboots).  
+The policy list paramters are split between paramters 4-6, since jamf has a character limit of 255 characters per a parameter in the database.  This was a design decision just in case anyone ever had the neeed to use more than 255 characters total, you can split the policies between those 3 parameters.   Logically the script will run all dependencies first, all software second, and all security payloads last (since security payloads sometimes require reboots).  
 
 ```
 NOTE: Python will split() these items by comma, so you only need to input the custom policy 
