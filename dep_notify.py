@@ -48,7 +48,7 @@ HEALTH_URL = sys.argv[7]
 USER, UID, GID = SCDynamicStoreCopyConsoleUser(None, None, None)
 # grab home folder in case we need it
 USER_HOME = NSHomeDirectoryForUser(USER)
-# specify file system path with DEPNotify will live
+# specify file system path where DEPNotify will live
 # my DEPNotify app deploys into the jamf application suppport folder, please modify this path
 # to where you deploy DEPnotify
 DEP_NOTIFY_PATH = '/Library/Application Support/JAMF/snowflake/DEPNotify.app/Contents/MacOS/DEPNotify'
