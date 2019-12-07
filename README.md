@@ -22,7 +22,7 @@ event trigger name and seprate each one by comma.  The code will then split this
 to iterate thorugh them and execute them
 ```
 
-The health check URL, I put in here so you can test to see if remote clients or remote offices may have issues reaching out to your Jamf Pro server.  Due take notice that I had issues with Jamf Cloud and built this in for that reason, but I have also experienced false negatives where the test fails, but my jamf cloud isntance is acutally up and running just fine.   So, this needs to be tested and by default is commented out of the code.  Results may vary from environment to environment.
+The health check URL, I put in here so you can test to see if remote clients or remote offices may have issues reaching out to your Jamf Pro server.  Due take notice that I had issues with Jamf Cloud and built this in for that reason, but I have also experienced false negatives where the test fails, but my jamf cloud instance is acutally up and running just fine.   So, this needs to be tested and by default is commented out of the code.  Results may vary from environment to environment.
 
 The `MAIN_POLICY_DICT` is a dictionary of all the jamf policies you may ever want to run in any enrollment workflow, and where you input the value of what you want the name to be displayed by DEP Notify.  In the picture above, I am using the verbiage "Deploying Firefox", but my manual trigger policy is named `Autoupdate-Firefox` which is probably confusing to an end user.  So, you will need to populate the dictionary with the proper values, and if something doesn't match it will break the code.  See the example below:
 
@@ -38,11 +38,11 @@ MAIN_POLICY_DICT={"Autoupdate-Firefox": "Firefox",
 
 Any dependencies you have will need to be deployed first.  Things like custom branding, and of course the DEP Notify App itself, which this script will do as long as it is deployed in the `DEPENDENCY_LIST` parameter, it will install before DEP Notify is called in code.  
 
-Also, specify the path of where you are deploying DEP Notify.  As a desigh choice, I have chosen to put it into `/Library/Application Support/JAMF` folder, so if a `removeframeork` is called, that app is also removed.  You can choose to deploy it anywhere, just be sure to update the paths in the global variables section of the code.
+Also, specify the path of where you are deploying DEP Notify.  As a design choice, I have chosen to put it into `/Library/Application Support/JAMF` folder, so if a `removeframeork` is called, that app is also removed.  You can choose to deploy it anywhere, just be sure to update the paths in the global variables section of the code.
 
 ## Branding
 
-You will need to deploy your custom logos and branding, and then specifcy where they are on the file system in the global variables section of the script, which is defined in code as `DEPSCREEN`
+You will need to deploy your custom logos and branding, and then specify where they are on the file system in the global variables section of the script, which is defined in code as `DEPSCREEN`
 
 
 ## Reusable Code
