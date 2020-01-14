@@ -22,7 +22,7 @@ event trigger name and seprate each one by comma.  The code will then split this
 to iterate thorugh them and execute them
 ```
 
-The health check URL, I put in here so you can test to see if remote clients or remote offices may have issues reaching out to your Jamf Pro server.  Due take notice that I had issues with Jamf Cloud and built this in for that reason, but I have also experienced false negatives where the test fails, but my jamf cloud isntance is acutally up and running just fine.   So, this needs to be tested and by default is commented out of the code.  Results may vary from environment to environment.
+The health check URL, I put in here so you can test to see if remote clients or remote offices may have issues reaching out to your Jamf Pro server.  Do take notice that I had issues with Jamf Cloud and built this in for that reason, but I have also experienced false negatives where the test fails, but my jamf cloud isntance is acutally up and running just fine.   So, this needs to be tested and by default is commented out of the code.  Results may vary from environment to environment.
 
 The `MAIN_POLICY_DICT` is a dictionary of all the jamf policies you may ever want to run in any enrollment workflow, and where you input the value of what you want the name to be displayed by DEP Notify.  In the picture above, I am using the verbiage "Deploying Firefox", but my manual trigger policy is named `Autoupdate-Firefox` which is probably confusing to an end user.  So, you will need to populate the dictionary with the proper values, and if something doesn't match it will break the code.  See the example below:
 
