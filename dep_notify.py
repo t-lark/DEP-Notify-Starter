@@ -55,7 +55,7 @@ DEP_LOG = "/var/tmp/depnotify.log"
 # path to icon for DEP Notify, whatever icon you want in the UI
 DEPSCREEN = "/path/to/custom/branding.png"
 # master dictionary for vanity names to display in DEP Notify
-# for example your policy might be called install_app02 and you might want it to display "Applicaiton 02"
+# for example your policy might be called install_app02 and you might want it to display "Application 02"
 MAIN_POLICY_DICT = {
     "install_Finder_Prefs": "macOS Finder Preferences",
     "autoupdate-Firefox": "Firefox",
@@ -145,7 +145,7 @@ def run_jamf_policy(run_list):
     write_to_dnlog("Command: DeterminateOffReset:")
 
 
-def set_compuptername():
+def set_computername():
     """set the computer name to the serial number of the Mac"""
     cmd = ["system_profiler", "SPHardwareDataType", "-xml"]
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -155,7 +155,6 @@ def set_compuptername():
     options = ["HostName", "ComputerName", "LocalHostName"]
     for option in options:
         subprocess.call(["scutil", "--set", option, serial])
-
 
 
 def software_updates():
@@ -226,7 +225,7 @@ def main():
     # check_jss_connection()
     # set the computer name
     logging.info("setting the computer name...")
-    set_compuptername()
+    set_computername()
     # ensure dependencies and jamf binary is present
     logging.info("Installing initial dependencies for DEP Notify flow...")
     install_dependencies()
